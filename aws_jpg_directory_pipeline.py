@@ -62,7 +62,6 @@ if __name__ == '__main__':
         try:
             urllib.request.urlretrieve(url, f"{parent_dir_name}/{dir_name}/{img_id}.jpg")
         except:
-            print(f'error with {i} in {name}')
             continue
 
   JMWT_clean_urls = clean_url_array(JMWT_art_urls)

@@ -11,15 +11,14 @@ if __name__ == '__main__':
 
   works_raw = pd.read_csv('data/collection/artwork_data.csv')
   
-  works_raw = works_raw.sample(n = 100)
 
   works_raw['ByJMWT'] = works_raw['artist'] == 'Turner, Joseph Mallord William'
 
   JMWT = works_raw['ByJMWT'] == True
   Other_artists = works_raw['ByJMWT'] == False
 
-  JMWT_works = works_raw[JMWT]
-  Other_artist_works = works_raw[Other_artists]
+  JMWT_works = works_raw[JMWT].sample(n = 45)
+  Other_artist_works = works_raw[Other_artists].sample(n=45)
 
   JMWT_art_urls = JMWT_works['thumbnailUrl'].to_numpy()
   Other_artist_urls = Other_artist_works['thumbnailUrl'].to_numpy()
@@ -33,10 +32,10 @@ if __name__ == '__main__':
   female_bool = works_with_gender.gender == 'Female'
 
 
-  F_set = works_with_gender[female_bool]
+  F_set = works_with_gender[female_bool].sample(n = 45)
   F_art_urls = F_set['thumbnailUrl'].to_numpy()
 
-  M_set = works_with_gender[male_bool]
+  M_set = works_with_gender[male_bool].sample(n = 45)
   M_art_urls = M_set['thumbnailUrl'].to_numpy()
 
   os.mkdir('JMWT_vs_Other')
@@ -57,14 +56,13 @@ if __name__ == '__main__':
 
   import time
   def array_to_folder (array, parent_dir_name, dir_name):
-    os.mkdir(dir_name)
+    os.mkdir(f'{parent_dir_name}/{dir_name}')
     for i, url in enumerate(array):
         time.sleep(.5)
         img_id = str(i)
         try:
             urllib.request.urlretrieve(url, f"{parent_dir_name}/{dir_name}/{img_id}.jpg")
         except:
-            print(f'error with {i} in {name}')
             continue
 
   JMWT_clean_urls = clean_url_array(JMWT_art_urls)
