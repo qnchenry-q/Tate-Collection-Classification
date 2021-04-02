@@ -16,8 +16,8 @@ if __name__ == '__main__':
   JMWT = works_raw['ByJMWT'] == True
   Other_artists = works_raw['ByJMWT'] == False
 
-  JMWT_works = works_raw[JMWT]
-  Other_artist_works = works_raw[Other_artists]
+  JMWT_works = works_raw[JMWT].sample(n=2500)
+  Other_artist_works = works_raw[Other_artists].sample(n=2500)
 
   JMWT_art_urls = JMWT_works['thumbnailUrl'].to_numpy()
   Other_artist_urls = Other_artist_works['thumbnailUrl'].to_numpy()
@@ -31,10 +31,10 @@ if __name__ == '__main__':
   female_bool = works_with_gender.gender == 'Female'
 
 
-  F_set = works_with_gender[female_bool]
+  F_set = works_with_gender[female_bool].sample(n=2500)
   F_art_urls = F_set['thumbnailUrl'].to_numpy()
 
-  M_set = works_with_gender[male_bool]
+  M_set = works_with_gender[male_bool].sample(n=2500)
   M_art_urls = M_set['thumbnailUrl'].to_numpy()
 
   os.mkdir('JMWT_vs_Other')
@@ -55,7 +55,7 @@ if __name__ == '__main__':
 
   import time
   def array_to_folder (array, parent_dir_name, dir_name):
-    os.mkdir(dir_name)
+    os.mkdir(f'{parent_dir_name}/{dir_name}')
     for i, url in enumerate(array):
         time.sleep(.5)
         img_id = str(i)
