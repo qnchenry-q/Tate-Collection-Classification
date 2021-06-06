@@ -11,6 +11,7 @@ Computation in an artificial neural network largely occurs in the hidden layers.
 The art to be classified was aggregated from the Tate Collection. The Tate Collection is a massive collection of British artwork and both modern and contemporary international works. It includes information about artworks and artists. Essentially, getting the data into 'neural network' (via Tensorflow) condition involved downloading and consolidating the images into folders corresponding to the intended class. Amazon Web Service's EC2 GPU was utilized to efficiently and programatically download the images into the appropriate directories. 
 
 ## Classifying by Artist
+The first ambition of this project was to take as input an artwork, and return as output whether or not the artwork was authored by James Mallord William Turner. **Sentence about JMWT's style** We as humans recognize fe
 
 
 ## Classifying by Male/Female label
