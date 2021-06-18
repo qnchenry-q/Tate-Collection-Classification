@@ -11,10 +11,10 @@ Computation in an artificial neural network largely occurs in the hidden layers.
 The art to be classified was aggregated from the Tate Collection. The Tate Collection is a massive collection of British artwork and both modern and contemporary international works. It includes information about artworks and artists. Essentially, getting the data into 'neural network' (via Tensorflow) condition involved downloading and consolidating the images into folders corresponding to the intended class. Amazon Web Service's EC2 GPU was utilized to efficiently and programatically download the images into the appropriate directories. 
 
 ## Classifying by Artist
-The first ambition of this project was to take as input an artwork, and return as output whether or not the artwork was authored by James Mallord William Turner. **Sentence about JMWT's style** We as humans recognize fe
-
+The first ambition of this project was to take as input an artwork, and return as output whether or not the artwork was authored by James Mallord William Turner. He is known for his expressive colourisations, imaginative landscapes and turbulent, often violent marine paintings. We as humans recognize feautures of artwork pretty effectively, but I think it would be a boon, to consumers and artists alike, if a computer was able to recognize authorship quickly and accurately. I assembled the neural network and gave it the task of recognizing whether an artwork was authored by James Mallord William Turner (JMWT) or not. I fed the trained algorithm 2050 artworks authored by JMWT and 2050 artworks authored by other artists. The model achieved ~90% accuracy. I was surprised and pleased with this result. 
 
 ## Classifying by Male/Female label
+The second ambition was more philosophical in nature as opposed to practical. The data included a binary gender classification and I wanted to run a CNN to see whether the computer could recognize an objective difference in the artworks classified as male-authored and female-authored. I fed this algorithm 1764 works of each classification and the model achieved ~80% accuracy. I was essentially shocked by this result. Below I dig a divot deeper into why these results may have occured.
 
 ## Takeaways/ Future Work
-
+In the future I would like to examine, if possible, exactly what features the model weighted as most important in each classification. 
