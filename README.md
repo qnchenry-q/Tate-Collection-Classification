@@ -17,4 +17,4 @@ The first ambition of this project was to take as input an artwork, and return a
 The second ambition was more philosophical in nature as opposed to practical. The data included a binary gender classification and I wanted to run a CNN to see whether the computer could recognize an objective difference in the artworks classified as male-authored and female-authored. I fed this algorithm 1764 works of each classification and the model achieved ~80% accuracy. I was essentially shocked by this result. Below I dig a divot deeper into why these results may have occured.
 
 ## Takeaways/ Future Work
-In the future I would like to examine, if possible, exactly what features the model weighted as most important in each classification. 
+The models both surprised me with their accuracy. In the future I would like to examine exactly what features each model weighted as most important.
